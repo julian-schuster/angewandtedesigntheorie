@@ -10,9 +10,9 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 34.0, 77.0, 1298.0, 617.0 ],
+		"rect" : [ 34.0, 77.0, 1452.0, 929.0 ],
 		"bglocked" : 0,
-		"openinpresentation" : 0,
+		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
 		"default_fontface" : 0,
 		"default_fontname" : "Arial",
@@ -76,7 +76,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 705.466660579045538, 373.460613131523132, 235.994886159896851, 52.0 ],
+					"patching_rect" : [ 705.466660579045538, 373.460613131523132, 237.0, 52.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 505.571420282125473, 18.531736373901367, 308.363306522369385, 29.0 ],
 					"text" : "Lautstärkeregler für die Musik"
@@ -305,7 +305,6 @@
 						"style" : "",
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
-						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-16",
