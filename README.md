@@ -1,6 +1,6 @@
 # Angewandte Designtheorie
 
-<img src="./doku/LoudAir.png" alt="Logo" height="150px">
+<img src="doku/LoudAir.png" alt="Logo" height="150px">
 
 Dies ist das Repository für das im Rahmen des Moduls "Angewandte Designtheorie" von Prof. Dr. Fischer entstandene Projekt "Loudair".
 Bei dem Projekt handelt es sich um eine Audiovisuelle Darstellung von Luftverschmutzung.
