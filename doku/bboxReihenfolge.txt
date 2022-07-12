@@ -1,0 +1,5 @@
+Bounding Box Reihenfolge für AQI API
+1. latmax
+2. lngmax
+3. latmin
+4. lngmin

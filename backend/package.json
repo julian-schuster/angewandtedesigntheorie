@@ -1,0 +1,16 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "Angewandte Designtheorie SS2022",
+  "main": "server.js",
+  "scripts": {
+    "dev": "set NODE_ENV=dev&& nodemon ./server.js localhost 3000"
+  },
+  "dependencies": {
+    "axios": "^0.27.2",
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "nodemon": "^2.0.16"
+  }
+}
