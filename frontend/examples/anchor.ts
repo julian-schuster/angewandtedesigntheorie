@@ -27,8 +27,6 @@ import * as JQuery from "jquery";
 
 const $ = JQuery.default;
 
-
-
 // setting initial values for required parameters
 let acceleration = 15;
 let bounce_distance = 400000;
@@ -89,127 +87,6 @@ $(document).on("click", "#showAllCountriesBtn", function (e) {
 $(document).on("click", "#stationsname-header", function (e) {
   sortTable(0);
 });
-
-$(document).on("click", "#aqi-header", function (e) {
-  //Muss die Nachtschicht noch fixen
-});
-
-
-/*
-setInterval(function(e){
-
-
-let aqiList = [];
-//Get only aqi related data from the MeasureStationList
- MeasureStationList.filter((x) => x.mesh.visible == true).forEach(element => {
-
-  aqiList.push(element.apiElement);
-
- });
-
- $.ajax({
-  type: "POST",
-  url: "http://localhost:3000/api/refresh",
-  data: JSON.stringify(aqiList),
-  contentType: "application/json",
-  success: function (result) {
-  console.log(result);
-  },
-});
-
-
-  
-},5000);
-
-
-
-//let result = MeasureStationList.filter(e => e.apiElement.uid > 10000 );
-
-//console.log(result);
-
-console.log(MeasureStationList);
-
-$.get(
-  "http://localhost/angewandtedesigntheorie/frontend/src/countryBounds.json", // url
-  function (data) {
-    let countryCounter = 0;
-    let countryAmount = Object.entries(data).length;
-    for (const [key, value] of Object.entries(data)) {
-      let country = value;
-      let url =
-        "https://api.waqi.info/v2/map/bounds?latlng=" +
-        country.ne.lat +
-        "," +
-        country.ne.lon +
-        "," +
-        country.sw.lat +
-        "," +
-        country.sw.lon +
-        "&networks=all&token=" +
-        API_TOKEN;
-      $.get(
-        url, // url
-        function (data) {
-          if (data.data.length > 0) {
-            data.data.forEach((element) => {
-              element.id = key;
-              if (!isNaN(element.aqi)) {
-
-                let result = MeasureStationList.filter(e => e.apiElement.uid  == element.uid && e.mesh.visible );
-                
-
-                for(let i = 0; i < result.length;i++) {
-                  result[i].apiElement.aqi = element.aqi;
-                  let new_geometry = new THREE.BoxBufferGeometry(10000, 5000 * element.aqi, 10000);
-                  result[i].mesh.geometry.dispose();
-                  result[i].mesh.geometry = new_geometry;
-          
-                }
-    
-
-
-              }
-            });
-          }
-        }
-      ).then(function () {
-        if (countryCounter < countryAmount) {
-          countryCounter++;
-        }
-
-        if (countryCounter == countryAmount) {
-          var perDefaultCountries = [
-            "FRA",
-            "DEU",
-            "GBR",
-            "ITA",
-            "CHI",
-            "ESP",
-            "AUT",
-            "CZE",
-            "POL",
-            "DNK",
-          ];
-
-          /*
-          //turn on selected countries again
-          var filteredObjs = MeasureStationList.filter((x) =>
-            perDefaultCountries.includes(x.id)
-          );
-
-          filteredObjs.forEach((element) => {
-            element.mesh.visible = !element.mesh.visible;
-          });
-
-
-        }
-      });
-    }
-  }
-);
-},10000) */
-
-
 
 //heading: 45,
 //tilt: 67,
@@ -285,7 +162,6 @@ new Loader(LOADER_OPTIONS).load().then(() => {
               "DNK",
             ];
 
-
             //turn on selected countries again
             var filteredObjs = MeasureStationList.filter((x) =>
               perDefaultCountries.includes(x.id)
@@ -340,29 +216,21 @@ new Loader(LOADER_OPTIONS).load().then(() => {
     let selectedScaleFac = $(this).val();
     let currentScaleVec = circle.scale;
 
-
     if (selectedScaleFac > currentScaleFac) {
-
       for (let i = 0; i < selectedScaleFac - currentScaleFac; i++) {
         currentScaleVec.multiplyScalar(2);
       }
-
     } else {
-
       for (let i = 0; i < currentScaleFac - selectedScaleFac; i++) {
         currentScaleVec.multiplyScalar(0.5);
       }
-
     }
     currentScaleFac = selectedScaleFac;
-
-
   });
 
   google.maps.event.addListener(map, "rightclick", function (e) {
 
     $('#selectedStationsTbl > tbody').html("")
-
     remove_duplicates_safe(intersectedStations).forEach(element => {
       $('#selectedStationsTbl > tbody').append("<tr><td>" + element.station.name + "</td><td>" + element.aqi + "</td></tr>");
     });
@@ -382,9 +250,6 @@ new Loader(LOADER_OPTIONS).load().then(() => {
   }
 
   google.maps.event.addListener(map, "mousemove", function (event) {
-
-
-
     let pnt = event.latLng;
     var lat = pnt.lat();
     var lng = pnt.lng();
