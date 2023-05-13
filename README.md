@@ -5,6 +5,8 @@
 Dies ist das Repository für das im Rahmen des Moduls "Angewandte Designtheorie" von Prof. Dr. Fischer entstandene Projekt "Loudair".
 Bei dem Projekt handelt es sich um eine Audiovisuelle Darstellung von Luftverschmutzungsdaten.
 
+<img src="./doku/Example.PNG" alt="Logo" height="300px">
+
 ## Setup
 1. `Max` installieren (https://cycling74.com/downloads)
 2. `Git` installieren (https://git-scm.com/downloads)
